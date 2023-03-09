@@ -35,7 +35,6 @@ data_cleaner.prosper_full_address()
 # Data Push to Production
 data_push.staging_to_production(SDE_production)
 data_push.staging_get_metadata(SDE_production)
-data_push.database_maintenance(SDE_production)
 end = timer()
 print(f"\tOperations complete in {((end - start)/60):.2f} minutes")
 arcpy.AcceptConnections(SDE_staging, True)
