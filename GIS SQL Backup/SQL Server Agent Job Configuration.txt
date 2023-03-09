@@ -1,0 +1,4 @@
+#step 1
+sqlcmd -S TOP-ARCGIS-SQL\GISVIEW -i E:\GIS-VIEW\MSSQL16.GISVIEW\MSSQL\Backup\01_BackUp_from_GIS.sql
+#step 2
+sqlcmd -S TOP-ARCGIS-SQL\GISVIEW -i E:\GIS-VIEW\MSSQL16.GISVIEW\MSSQL\Backup\02_Restore_from_GIS.sql
