@@ -1,0 +1,176 @@
+﻿{
+    "AllNodes": [
+        {
+            "NodeName": "ToP-ArcGIS-T03",
+            "DataStoreTypes": [
+                "Relational",
+                "SpatioTemporal"
+            ],
+            "Role": [
+                "DataStore"
+            ],
+            "SslCertificates": [
+                {
+                    "Path": "C:\\config\\certificate.pfx",
+                    "Password": "[REDACTED]",
+                    "CNameFQDN": "dev-datastore.prospertx.gov",
+                    "Target": [
+                        "DataStore"
+                    ],
+                    "SslRootOrIntermediate": [
+                     {
+                      "Alias": "wild-card-root-ca",
+                      "Path": "C:\\config\\ssl_root.cer"
+                     },
+                     {
+                      "Alias": "wild-card-intermediate",
+                      "Path": "C:\\config\\ssl_intermediate.cer"
+                     }
+                    ]
+                }
+            ]
+        },
+        {
+            "NodeName": "ToP-ArcGIS-T02",
+            "Role": [
+                "Portal",
+                "PortalWebAdaptor"
+            ],
+            "SslCertificates": [
+                {
+                    "Path": "C:\\config\\certificate.pfx",
+                    "Password": "[REDACTED]",
+                    "CNameFQDN": "dev-data.prospertx.gov",
+                    "Target": [
+                        "Portal",
+                        "PortalWebAdaptor"
+                    ],
+                    "SslRootOrIntermediate": [
+                     {
+                      "Alias": "wild-card-root-ca",
+                      "Path": "C:\\config\\ssl_root.cer"
+                     },
+                     {
+                      "Alias": "wild-card-intermediate",
+                      "Path": "C:\\config\\ssl_intermediate.cer"
+                     }
+                    ]
+                }
+            ]
+        },
+        {
+            "NodeName": "ToP-ArcGIS-T01",
+            "Role": [
+                "Server",
+                "ServerWebAdaptor"
+            ],
+            "SslCertificates": [
+                {
+                    "Path": "C:\\config\\certificate.pfx",
+                    "Password": "[REDACTED]",
+                    "CNameFQDN": "dev-maps.prospertx.gov",
+                    "Target": [
+                        "Server",
+                        "ServerWebAdaptor"
+                    ],
+                    "SslRootOrIntermediate": [
+                     {
+                      "Alias": "wild-card-root-ca",
+                      "Path": "C:\\config\\ssl_root.cer"
+                     },
+                     {
+                      "Alias": "wild-card-intermediate",
+                      "Path": "C:\\config\\ssl_intermediate.cer"
+                     }
+                    ]
+                }
+            ]
+        }
+    ],
+    "ConfigData": {
+        "Version": "10.9.1",
+        "InsightsVersion":"2022.3",
+        "ServerContext": "arcgis",
+        "PortalContext": "portal",
+        "ServerRole": "GeneralPurposeServer",
+        "DownloadPatches":true,
+        "Credentials": {
+            "ServiceAccount": {
+                "UserName": "[REDACTED]",
+                "Password": "[REDACTED]",
+                "IsDomainAccount": true,
+                "IsMSAAccount": false
+            },
+            "ADServiceUser": {
+                "UserName": "[REDACTED]",
+                "Password": "[REDACTED]"
+            }
+        },
+        "Server": {
+            "LicenseFilePath": "C:\\arcgis_software\\ArcGISGISServerAdvanced_ArcGISServer_1287763.prvc",
+            "ExternalLoadBalancer": "dev-maps.prospertx.gov",
+            "InternalLoadBalancer": "ToP-ArcGIS-T01.[REDACTED].local",
+            "Installer": {
+                "Path": "C:\\arcgis_software\\ArcGIS_Server_Windows_1091_180041.exe",
+                "InstallDir": "C:\\ArcGIS\\Server",
+                "InstallDirPython": "C:\\Python27",
+                "EnableArcMapRuntime": false,
+                "EnableDotnetSupport": true,
+                "EnableHTTPSOnly":true,
+                "PatchesDir": "C:\\arcgis_patches"
+            },
+            "ServerDirectoriesRootLocation": "C:\\arcgisserver\\directories",
+            "ConfigStoreLocation": "C:\\arcgisserver\\config-store",
+            "PrimarySiteAdmin": {
+                "UserName": "[REDACTED]",
+                "Password": "[REDACTED]"
+            }
+        },
+        "Portal": {
+            "LicenseFilePath": "C:\\arcgis_software\\ArcGIS_Enterprise_Portal_1091_409567_20230221.json",
+            "PortalLicenseUserTypeId": "creatorUT",
+            "ExternalLoadBalancer": "dev-data.prospertx.gov",
+            "InternalLoadBalancer": "ToP-ArcGIS-T02.[REDACTED].local",
+            "Installer": {
+                "Path": "C:\\arcgis_software\\Portal_for_ArcGIS_Windows_1091_180052.exe",
+                "WebStylesPath": "C:\\arcgis_software\\Portal_for_ArcGIS_Web_Styles_Windows_1091_180053.exe",
+                "InstallDir": "C:\\ArcGIS\\Portal",
+                "ContentDir": "C:\\arcgisportal",
+                "PatchesDir": "C:\\arcgis_patches"
+            },
+            "ContentDirectoryLocation":"C:\\arcgisportal\\content",
+            "DisableAnonymousAccess ":true,
+            "EnableAutomaticAccountCreation":true,
+            "DefaultRoleForUser": "iAAAAAAAAAAAAAAA (Viewer)",
+            "DefaultUserLicenseTypeIdForUser":"viewerUT",
+            "PortalAdministrator": {
+                "UserName": "[REDACTED]",
+                "Email": "[REDACTED]",
+                "Password": "[REDACTED]",
+                "SecurityQuestionIndex": "[REDACTED]",
+                "SecurityAnswer": "[REDACTED]"
+            }
+        },
+        "DataStore": {
+            "ContentDirectoryLocation": "C:\\arcgisdatastore",
+            "EnableFailoverOnPrimaryStop": false,
+            "Installer": {
+                "Path": "C:\\arcgis_software\\ArcGIS_DataStore_Windows_1091_180054.exe",
+                "InstallDir": "C:\\ArcGIS\\DataStore",
+                "PatchesDir": "C:\\arcgis_patches"
+            }
+        },
+        "WebAdaptor": {
+            "AdminAccessEnabled": true,
+            "OverrideHTTPSBinding": true,
+            "Installer": {
+                "Path": "C:\\arcgis_software\\ArcGIS_Web_Adaptor_for_Microsoft_IIS_1091_180055.exe"
+            }
+        },
+        "Insights": {
+            "Installer": {
+                "Path": "C:\\arcgis_software\\ArcGIS_Insights_Windows_2022_3_184093.exe"
+            }
+        }
+    }
+}
