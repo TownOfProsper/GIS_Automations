@@ -395,6 +395,7 @@ def roads_drop_fields(sedf):
         ],
         axis=1,
         inplace=True,
+        errors = "ignore",
     )
     return sedf
 
