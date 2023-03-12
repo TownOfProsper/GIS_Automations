@@ -25,6 +25,7 @@ WITH ROLLBACK IMMEDIATE
 USE [Viewer]
 ALTER USER sde WITH LOGIN = sde
 ALTER USER publisher_view WITH LOGIN = publisher_view
+ALTER USER publisher_ago WITH LOGIN = publisher_ago
 ;
 -- Setting Viewer Database to Multi User
 USE [master]
