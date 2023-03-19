@@ -2,6 +2,7 @@ import arcpy
 
 print("Beginning Operations")
 # Refresh Source Layers
+arcpy.env.overwriteOutput = True
 arcpy.env.addOutputsToMap = False
 sde_viewer = r"B:\EGDB_Connections\PublisherView_Production.sde"
 sde_tyler_epl = r"B:\EGDB_Connections\ForAdministrationOnly\Admin_Tyler_EPL.sde"
